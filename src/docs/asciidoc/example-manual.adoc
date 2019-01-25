@@ -1,54 +1,96 @@
-= Example Manual
-Doc Writer <doc.writer@example.org>
-2014-09-09
-:revnumber: {project-version}
-:example-caption!:
-ifndef::imagesdir[:imagesdir: images]
-ifndef::sourcedir[:sourcedir: ../../main/java]
+// header file for arc42-template,
+// including all help texts
+//
+// ====================================
 
-This is a user manual for an example project.
+= image:arc42-logo.png[arc42] Template
+// toc-title definition MUST follow document title without blank line!
+:toc-title: Table of Contents
 
-== Introduction
+//additional style for arc42 help callouts
+ifdef::basebackend-html[]
+++++
+<style>
+.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0px; padding: 2px 0px 3px 2px;}
+.arc42help::before {content: "?";}
+.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
+.arc42help:hover::before {content: "";}
+@media print {
+	.arc42help {display:hidden;}
+}
+</style>
+++++
+endif::basebackend-html[]
 
-This project does something.
-We just haven't decided what that is yet.
+// configure EN settings for asciidoc
+include::src/config.adoc[]
 
-== Source Code
 
-[source,java]
-.Java code from project
-----
-include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
-----
+include::src/about-arc42.adoc[]
 
-This page was built by the following command:
+// horizontal line
+***
 
- $ mvn
-
-== Images
-
-[.thumb]
-image::sunset.jpg[scaledwidth=75%]
-
-== Attributes
-
-.Built-in
-asciidoctor-version:: {asciidoctor-version}
-safe-mode-name:: {safe-mode-name}
-docdir:: {docdir}
-docfile:: {docfile}
-imagesdir:: {imagesdir}
-
-.Custom
-project-version:: {project-version}
-sourcedir:: {sourcedir}
-endpoint-url:: {endpoint-url}
-
-== Includes
-
-.include::subdir/_b.adoc[]
+[role="arc42help"]
+****
+[NOTE]
 ====
-include::subdir/_b.adoc[]
+This version of the template contains some help and explanations.
+It is used for familiarization with arc42 and the understanding of the concepts.
+For documentation of your own system you use better the _plain_ version.
 ====
+****
 
-WARNING: Includes can be tricky!
+
+// numbering from here on
+:numbered:
+
+<<<<
+// 1. Introduction and Goals
+include::src/01_introduction_and_goals.adoc[]
+
+<<<<
+// 2. Architecture Constraints
+include::src/02_architecture_constraints.adoc[]
+
+<<<<
+// 3. System Scope and Context
+include::src/03_system_scope_and_context.adoc[]
+
+<<<<
+// 4. Solution Strategy
+include::src/04_solution_strategy.adoc[]
+
+<<<<
+// 5. Building Block View
+include::src/05_building_block_view.adoc[]
+
+<<<<
+// 6. Runtime View
+include::src/06_runtime_view.adoc[]
+
+<<<<
+// 7. Deployment View
+include::src/07_deployment_view.adoc[]
+
+<<<<
+// 8. Concepts
+include::src/08_concepts.adoc[]
+
+<<<<
+// 9. Design Decisions
+include::src/09_design_decisions.adoc[]
+
+<<<<
+// 10. Quality Scenarios
+include::src/10_quality_scenarios.adoc[]
+
+<<<<
+// 11. Technical Risks
+include::src/11_technical_risks.adoc[]
+
+<<<<
+// 12. Glossary
+include::src/12_glossary.adoc[]
+
+
