@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>uniovi.asw</groupId>
     <artifactId>deChat_0</artifactId>
@@ -12,91 +12,93 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <junit.version>4.12</junit.version>
-        <cucumber.version>4.2.2</cucumber.version>
         <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
         <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
         <asciidoctorj.version>1.5.7</asciidoctorj.version>
         <jruby.version>9.1.17.0</jruby.version>
+        <commons-io.version>1.3.2</commons-io.version>
     </properties>
-	
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.2.RELEASE</version>
-	</parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+    </parent>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+              <groupId>com.h2database</groupId>
+              <artifactId>h2</artifactId>
+         </dependency>
+
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-data-rest</artifactId>
+                    <scope>test</scope>
+                </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>io.cucumber</groupId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
-
-			<dependency>
-				<groupId>io.cucumber</groupId>
-				<artifactId>cucumber-spring</artifactId>
-				<version>${cucumber.version}</version>
-				<scope>test</scope>
-			</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
-<!--        <defaultGoal>process-resources</defaultGoal> -->
+        <!--        <defaultGoal>process-resources</defaultGoal> -->
         <plugins>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>${asciidoctor.maven.plugin.version}</version>              
+                <version>${asciidoctor.maven.plugin.version}</version>
 
                 <dependencies>
-   				    <dependency>
+                    <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-pdf</artifactId>
                         <version>${asciidoctorj.pdf.version}</version>
@@ -114,7 +116,7 @@
                         <version>${asciidoctorj.version}</version>
                     </dependency>
                 </dependencies>
-				
+
                 <configuration>
                     <sourceDirectory>src/docs</sourceDirectory>
                     <!-- If you set baseDir to ${project.basedir}, top-level includes are resolved relative to the project root -->
@@ -199,25 +201,25 @@
                             </attributes>
                         </configuration>
                     </execution>
-<!--					<execution>
-                        <id>generate-pdf-doc</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>pdf</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
-                            <attributes>
-                                <icons>font</icons>
-                                <pagenums/>
-                                <toc/>
-                                <idprefix/>
-                                <idseparator>-</idseparator>
-                            </attributes>
-                        </configuration>
-                    </execution>  -->
-                </executions> 			
+                    <!--					<execution>
+                                            <id>generate-pdf-doc</id>
+                                            <phase>generate-resources</phase>
+                                            <goals>
+                                                <goal>process-asciidoc</goal>
+                                            </goals>
+                                            <configuration>
+                                                <backend>pdf</backend>
+                                                <sourceHighlighter>coderay</sourceHighlighter>
+                                                <attributes>
+                                                    <icons>font</icons>
+                                                    <pagenums/>
+                                                    <toc/>
+                                                    <idprefix/>
+                                                    <idseparator>-</idseparator>
+                                                </attributes>
+                                            </configuration>
+                                        </execution>  -->
+                </executions>
             </plugin>
             <!--
             NOTE: Use the maven-resources-plugin if there are assets outside the AsciiDoc source folder
