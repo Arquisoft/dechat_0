@@ -62,9 +62,11 @@ public class MainController {
             elapsed = LongProcess.sortStream(DefaultTimes,DefaultSize,random);
         break;
         case "error":
-            throw new RuntimeException("Name 'error' not found");
+            elapsed = LongProcess.error();
+        break;
         default:
             elapsed = LongProcess.sortStream(random.nextInt(DefaultTimes),random.nextInt(DefaultSize),random);
+
     }
     ModelAndView model = new ModelAndView("search");
     model.addObject("name",name);

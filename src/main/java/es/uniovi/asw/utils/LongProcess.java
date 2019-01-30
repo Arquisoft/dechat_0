@@ -30,5 +30,9 @@ public class LongProcess {
         LOG.info("Elapsed: " + elapsed);
         return elapsed;
     }
+
+    public static long error() {
+        throw new RuntimeException("Searching for error raises an exception");
+    }
 }
 

@@ -4,7 +4,7 @@ jdk:
 - oraclejdk8
 script: "mvn test"
 env:
-  - CODACY_PROJECT_TOKEN="e73979e44e464ad48e7fafc12de16a23"
+  - CODACY_PROJECT_TOKEN="8a91359af0694bca8f755257cfd5d1be"
 before_install:
   - sudo apt-get install jq
   - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets[0].browser_download_url')
