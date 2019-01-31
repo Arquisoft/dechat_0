@@ -32,7 +32,7 @@ public class LongProcess {
     }
 
     public static long error() {
-        throw new RuntimeException("Searching for error raises an exception");
+        throw new IllegalArgumentException("Searching for error raises an exception");
     }
 }
 
