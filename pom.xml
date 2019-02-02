@@ -14,6 +14,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
         <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
+        <asciidoctorj.diagram.version>1.5.9</asciidoctorj.diagram.version>
         <asciidoctorj.version>1.5.7</asciidoctorj.version>
         <jruby.version>9.1.17.0</jruby.version>
         <commons-io.version>1.3.2</commons-io.version>
@@ -91,6 +92,7 @@
 
     </dependencies>
 
+
     <build>
         <plugins>
             <plugin>
@@ -116,10 +118,18 @@
                         <artifactId>asciidoctorj</artifactId>
                         <version>${asciidoctorj.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj.diagram.version}</version>
+                    </dependency>
                 </dependencies>
 
                 <configuration>
                     <sourceDirectory>src/docs</sourceDirectory>
+                    <requires>
+                        <require>asciidoctor-diagram</require>
+                    </requires>
                     <!-- If you set baseDir to ${project.basedir}, top-level includes are resolved relative to the project root -->
                     <!--
                     <baseDir>${project.basedir}</baseDir>
@@ -129,6 +139,7 @@
                         <endpoint-url>http://example.org</endpoint-url>
                         <sourcedir>${project.build.sourceDirectory}</sourcedir>
                         <project-version>${project.version}</project-version>
+                        <graphvizdot>C:\utils\Graphics\Graphviz\release\bin\dot.exe</graphvizdot>
                     </attributes>
                 </configuration>
                 <executions>

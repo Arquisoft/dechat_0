@@ -30,6 +30,18 @@ There are many notations for describing scenarios, e.g.
 
 ****
 
+This is a sequence diagram:
+
+[plantuml,"test",png]
+....
+class Animal
+class Cat
+class Dog
+Animal <|-- Cat
+Animal <|-- Dog
+....
+
+
 === <Runtime Scenario 1>
 
 
