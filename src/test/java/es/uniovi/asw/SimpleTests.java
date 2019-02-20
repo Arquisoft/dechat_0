@@ -23,7 +23,7 @@ public class SimpleTests {
 
     @Test
     public void landingPageTest() throws Exception {
-        this.mvc.perform(get("/")).andExpect(status().isOk());
+        this.mvc.perform(get("/luis")).andExpect(status().isOk());
     }
 
     @Test
